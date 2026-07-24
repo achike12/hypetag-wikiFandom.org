@@ -1,8 +1,11 @@
-// ==========================
+```javascript
+// ==========================================
 // HYPETAG WIKI
-// ==========================
+// JavaScript v1.0
+// ==========================================
 
-// Fade in sections
+// Fade in Sections
+
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver((entries)=>{
@@ -12,15 +15,14 @@ entries.forEach(entry=>{
 if(entry.isIntersecting){
 
 entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
+
+entry.target.style.transform="translateY(0px)";
 
 }
 
 });
 
-},{
-threshold:.15
-});
+},{threshold:.15});
 
 sections.forEach(section=>{
 
@@ -34,40 +36,83 @@ observer.observe(section);
 
 });
 
-// Navbar background
+// Navbar Scroll Effect
 
 const navbar=document.querySelector(".navbar");
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>100){
+if(window.scrollY>80){
 
 navbar.style.background="rgba(0,0,0,.95)";
-navbar.style.boxShadow="0 0 25px rgba(255,49,49,.35)";
+
+navbar.style.boxShadow="0 0 20px rgba(255,49,49,.35)";
 
 }else{
 
-navbar.style.background="rgba(10,10,10,.85)";
+navbar.style.background="rgba(0,0,0,.75)";
+
 navbar.style.boxShadow="none";
 
 }
 
 });
 
-// Create floating particles
+// Floating Particles
 
-for(let i=0;i<40;i++){
+for(let i=0;i<45;i++){
 
-const dot=document.createElement("div");
+const particle=document.createElement("div");
 
-dot.className="particle";
+particle.className="particle";
 
-dot.style.left=Math.random()*100+"vw";
+particle.style.left=Math.random()*100+"vw";
 
-dot.style.animationDelay=Math.random()*8+"s";
+particle.style.animationDelay=Math.random()*8+"s";
 
-dot.style.animationDuration=(5+Math.random()*8)+"s";
+particle.style.animationDuration=(6+Math.random()*8)+"s";
 
-document.body.appendChild(dot);
+document.body.appendChild(particle);
 
 }
+
+// Back To Top Button
+
+const topButton=document.createElement("button");
+
+topButton.innerHTML="⬆";
+
+topButton.className="topButton";
+
+document.body.appendChild(topButton);
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topButton.style.opacity="1";
+
+topButton.style.pointerEvents="auto";
+
+}else{
+
+topButton.style.opacity="0";
+
+topButton.style.pointerEvents="none";
+
+}
+
+});
+
+topButton.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+```
