@@ -493,3 +493,104 @@ justify-content:center;
 
 }
 ```
+```css
+/* ===========================
+Particles
+=========================== */
+
+.particle{
+
+position:fixed;
+
+bottom:-20px;
+
+width:5px;
+
+height:5px;
+
+background:#ff3131;
+
+border-radius:50%;
+
+opacity:.3;
+
+pointer-events:none;
+
+animation:particle linear infinite;
+
+z-index:-1;
+
+}
+
+@keyframes particle{
+
+0%{
+
+transform:translateY(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.5;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+Top Button
+=========================== */
+
+.topButton{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ff3131;
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.3s;
+
+box-shadow:0 0 20px rgba(255,49,49,.5);
+
+}
+
+.topButton:hover{
+
+transform:scale(1.1);
+
+background:#ff5a5a;
+
+}
+```
